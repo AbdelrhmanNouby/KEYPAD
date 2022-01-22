@@ -17,25 +17,25 @@ uint8_t KEYPAD_u8Init(void)
 	// check if DIO return Error
 	if ( DIO_u8SetPinDirection(COL_PORT,COL_PIN0,OUTPUTPIN) != STD_TYPES_OK )
 		u8ErrorState = KEYPAD_Init_Error ;
-	if ( DIO_u8SetPinDirection(COL_PORT,COL_PIN1,OUTPUTPIN) != STD_TYPES_OK )
+	else if ( DIO_u8SetPinDirection(COL_PORT,COL_PIN1,OUTPUTPIN) != STD_TYPES_OK )
 		u8ErrorState = KEYPAD_Init_Error ;	
-	if ( DIO_u8SetPinDirection(COL_PORT,COL_PIN2,OUTPUTPIN) != STD_TYPES_OK )
+	else if ( DIO_u8SetPinDirection(COL_PORT,COL_PIN2,OUTPUTPIN) != STD_TYPES_OK )
 		u8ErrorState = KEYPAD_Init_Error ;
 	/*step 2 : config Rows pins as inputs , pull ups*/
 	// check if DIO return Error
-	if ( DIO_u8SetPinDirection(ROW_PORT,ROW_PIN0,INPUTPIN_PULLUP) != STD_TYPES_OK )
+	else if ( DIO_u8SetPinDirection(ROW_PORT,ROW_PIN0,INPUTPIN_PULLUP) != STD_TYPES_OK )
 		u8ErrorState = KEYPAD_Init_Error ;
-	if ( DIO_u8SetPinDirection(ROW_PORT,ROW_PIN1,INPUTPIN_PULLUP) != STD_TYPES_OK )
+	else if ( DIO_u8SetPinDirection(ROW_PORT,ROW_PIN1,INPUTPIN_PULLUP) != STD_TYPES_OK )
 		u8ErrorState = KEYPAD_Init_Error ;
-	if ( DIO_u8SetPinDirection(ROW_PORT,ROW_PIN2,INPUTPIN_PULLUP) != STD_TYPES_OK )
+	else if ( DIO_u8SetPinDirection(ROW_PORT,ROW_PIN2,INPUTPIN_PULLUP) != STD_TYPES_OK )
 		u8ErrorState = KEYPAD_Init_Error ;
 	/*step 3 : Initialize Col pins -> HIGH*/
 	// check if DIO return Error
-	if ( DIO_u8SetPinData(COL_PORT,COL_PIN0,HIGH) != STD_TYPES_OK )
+	else if ( DIO_u8SetPinData(COL_PORT,COL_PIN0,HIGH) != STD_TYPES_OK )
 		u8ErrorState = KEYPAD_Init_Error ;
-	if ( DIO_u8SetPinData(COL_PORT,COL_PIN1,HIGH) != STD_TYPES_OK )
+	else if ( DIO_u8SetPinData(COL_PORT,COL_PIN1,HIGH) != STD_TYPES_OK )
 		u8ErrorState = KEYPAD_Init_Error ;
-	if ( DIO_u8SetPinData(COL_PORT,COL_PIN2,HIGH) != STD_TYPES_OK )
+	else if ( DIO_u8SetPinData(COL_PORT,COL_PIN2,HIGH) != STD_TYPES_OK )
 		u8ErrorState = KEYPAD_Init_Error ;
 	return u8ErrorState ;
 }
