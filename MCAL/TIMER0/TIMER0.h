@@ -41,7 +41,7 @@
 #define	DELAY_UNAVAILABLE   1
 
 // function to initialize timer0 
-uint8_t TIMER0_Init (void);
+uint8_t TIMER0_u8Init (void);
 
 // function to make timer0 start counting 
 uint8_t TIMER0_Start (void);

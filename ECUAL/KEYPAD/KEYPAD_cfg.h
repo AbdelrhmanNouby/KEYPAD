@@ -8,6 +8,7 @@
 #ifndef ECUAL_KEYPAD_KEYPAD_CFG_H_
 #define ECUAL_KEYPAD_KEYPAD_CFG_H_
 
+
 // KEYPAD 3*3
 #define KEYPAD_ROWS 3				
 #define KEYPAD_COL  3
@@ -35,7 +36,7 @@
 #define ROW_PIN2  PIN4
 
 // buttons values in keypad  
-#define KEYPAD_VALUES {{1,2,3},{4,5,6},{7,8,9}}
+#define KEYPAD_VALUES	{{1,2,3},{4,5,6},{7,8,9}}
 
 
 #endif /* ECUAL_KEYPAD_KEYPAD_CFG_H_ */

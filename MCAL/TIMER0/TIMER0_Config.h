@@ -9,8 +9,8 @@
 #ifndef TIMER0_CONFIG_H_
 #define TIMER0_CONFIG_H_
 
-#define F_CPU 8000000UL
-#define F_CPU_E 8000U
-#define PRESCALER 64U
+#define F_CPU		8000000UL
+#define F_CPU_E		8000U
+#define PRESCALER	64U
 
 #endif /* TIMER0_CONFIG_H_ */

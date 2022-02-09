@@ -18,43 +18,15 @@ int main(void)
 	LED_u8Init(led2);
 	LED_u8Init(led3);
 	LED_u8Init(led4);	
-	PORTB_REG = 0 ;
+	DIO_u8SetPortData( PORTB , 0 );
 	KEYPAD_u8Init();
-	uint8_t KYEPAD_State = KEYPAD_NO_PRESSED_KEY ;
+	uint8_t KEYPAD_State = KEYPAD_NO_PRESSED_KEY ;
     while (1) 
     {
-		KEYPAD_u8GetPressedKey(&KYEPAD_State);
-		switch (KYEPAD_State)
+		KEYPAD_u8GetPressedKey(&KEYPAD_State);
+		if ((( KEYPAD_State > 0) && ( KEYPAD_State < 10 )) || ( KEYPAD_State == KEYPAD_NO_PRESSED_KEY ))
 		{
-			case 1 :
-				DIO_u8SetPortData( PORTB , 1 << 4 ) ;
-				break ;
-			case 2 :
-				DIO_u8SetPortData( PORTB , 2 << 4 ) ;
-				break ;
-			case 3 :
-				DIO_u8SetPortData( PORTB , 3 << 4 ) ;
-				break ;
-			case 4 :
-				DIO_u8SetPortData( PORTB , 4 << 4 ) ;
-				break ;
-			case 5 :
-				DIO_u8SetPortData( PORTB , 5 << 4 ) ;
-				break ;
-			case 6 :
-				DIO_u8SetPortData( PORTB , 6 << 4 ) ;
-				break ;
-			case 7 :
-				DIO_u8SetPortData( PORTB , 7 << 4 ) ;
-				break ;
-			case 8 :
-				DIO_u8SetPortData( PORTB , 8 << 4 ) ;
-				break ;	
-			case 9 :
-				DIO_u8SetPortData( PORTB , 9 << 4 ) ;
-				break ;	
-			default:
-				break ;
+			DIO_u8SetPortData( PORTB , KEYPAD_State << 4 ) ;
 		}
     }
 }
